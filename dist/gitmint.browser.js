@@ -4241,7 +4241,7 @@ var Gitmint =
         });
         req.open(method, url, true);
 
-        req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview, application/vnd.github.html+json, application/x-www-form-urlencoded');
+        req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview, application/vnd.github.html+json, application/x-www-form-urlencoded, application/vnd.github.machine-man-preview+json');
         if (token) {
           req.setRequestHeader('Authorization', 'token ' + token);
         }
