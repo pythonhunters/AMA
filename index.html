@@ -19,14 +19,22 @@
   const myTheme = {
     render(state, instance) {
       const container = document.createElement('div')
-      container.lang = "en-US"
+      container.lang = "zh-CN"
       container.className = 'gitment-container gitment-root-container'
       
       // your custom component
-      container.appendChild(instance.renderHeader(state, instance))
+      container.appendChild(instance.renderTitle(state, instance))
       container.appendChild(instance.renderEditor(state, instance))
       container.appendChild(instance.renderComments(state, instance))
       container.appendChild(instance.renderFooter(state, instance))
+      return container
+    },
+    renderTitle(state, instance) {
+      const container = document.createElement('div')
+      container.style.cssText = "font-size: 24px";
+      container.innerHTML = "欢迎大家来到捕蛇者说 ask me anything<br>你可以提出任何想问的问题，并对已有的提问投票。<br>";
+      container.innerHTML += "前往 <a target='_blank' href='https://github.com/pythonhunters/AMA/issues/1'>issue page</a>，点击 ❤️ 投票<br><br>"
+      container.innerHTML += "我们会在x月x号录一期节目回答这些问题，其中高票问题会优先被回答。<br>";
       return container
     }
   }
